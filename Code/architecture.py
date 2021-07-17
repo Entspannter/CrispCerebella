@@ -1,19 +1,4 @@
-import matplotlib.pyplot as plt
-import pandas as pd
-import os
-from pandas import read_csv
-from pandas import DataFrame
-import numpy as np
-from numpy import mean
-from numpy import std
-from numpy import array
-from numpy import vstack
-from numpy import dstack
-from numpy import unique
-from scipy import stats
-from matplotlib import pyplot
 from tensorflow import keras
-from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import Flatten
 from keras.layers import Dropout
@@ -22,40 +7,35 @@ from keras.layers import TimeDistributed
 from keras.layers import ConvLSTM2D
 from keras.layers.convolutional import Conv1D
 from keras.layers.convolutional import MaxPooling1D
-from tensorflow.keras.utils import to_categorical
-import keras_tuner
 from keras_tuner import HyperModel
-from keras.callbacks import EarlyStopping
-from sklearn.model_selection import KFold
-from sklearn.model_selection import train_test_split
-from sklearn import metrics
-from sklearn.metrics import classification_report
-from sklearn.metrics import plot_confusion_matrix
-import seaborn as sns
 
+
+# define the class for the LSTM model, containing 2 LSTM layers
 class LSTMStacked(HyperModel):
     def __init__(self, input_shape,n_outputs):
         self.input_shape = input_shape
         self.n_outputs = n_outputs
 
+    # build function that takes hyperparameters as an input
     def build(self, hp):
 
         model = keras.Sequential()
 
+        # define the number of units so that it can be optimized in the hyperparameters tuning step
         model.add(LSTM(
                         units=hp.Int(
                             'Units_LSTM_1',
                             min_value=32,
-                            max_value=512,
-                            step=32,
+                            max_value=128,
+                            step=16,
                             default=128
                         ),
                        input_shape=self.input_shape,
                        return_sequences = True
                     )
                 )
-        
 
+        # define the dropout rate so that it can be optimized in the hyperparameters tuning step
         model.add(
             Dropout(rate=hp.Float(
                 'dropout_1',
@@ -66,21 +46,19 @@ class LSTMStacked(HyperModel):
                     )
                   )
                 )
-        
-
-
+        # define the number of units so that it can be optimized in the hyperparameters tuning step
         model.add(LSTM(
                         units=hp.Int(
                             'Units_LSTM_2',
                             min_value=32,
-                            max_value=512,
-                            step=32,
+                            max_value=128,
+                            step=16,
                             default=128
                         )
                     )
-                )
-        
+        )
 
+        # define the dropout rate so that it can be optimized in the hyperparameters tuning step
         model.add(
             Dropout(rate=hp.Float(
                 'dropout_2',
@@ -89,18 +67,17 @@ class LSTMStacked(HyperModel):
                 default=0.25,
                 step=0.05,
                     )
-                  )
+            )
                 )
-        
 
-
+        # define the number if units so that it can be optimized in the hyperparameters tuning step
         model.add(
             Dense(
                 units=hp.Int(
                     'units',
-                    min_value=64,
-                    max_value=512,
-                    step=32,
+                    min_value=32,
+                    max_value=128,
+                    step=16,
                     default=128
                 ),
                 activation=hp.Choice(
@@ -113,6 +90,7 @@ class LSTMStacked(HyperModel):
 
         model.add(Dense(self.n_outputs, activation='softmax'))
 
+        # define the learning rate so that it can be optimized in the hyperparameters tuning step
         model.compile(
             optimizer=keras.optimizers.Adam(
                 hp.Float(
@@ -129,29 +107,32 @@ class LSTMStacked(HyperModel):
         
         return model
 
+# define the class for the ConvLSTM model
 class ConvLSTM(HyperModel):
-    def __init__(self, input_shape,n_outputs):
+    def __init__(self, input_shape, n_outputs):
         self.input_shape = input_shape
         self.n_outputs = n_outputs
 
+    # build function that takes hyperparameters as an input
     def build(self, hp):
-
 
         model = keras.Sequential()
 
+        # define the the number of output filters so that it can be optimized in the hyperparameters tuning step
         model.add(
             ConvLSTM2D(
                 filters=hp.Choice(
                         'num_filters',
                         values=[16, 32, 64],
-                        default=64,
+                        default=16,
                 ),
-                kernel_size=(1,3),
+                kernel_size=(1, 3),
                 activation='relu',
                 input_shape=self.input_shape
             )
         )
 
+        # define the dropout rate so that it can be optimized in the hyperparameters tuning step
         model.add(
             Dropout(rate=hp.Float(
                 'dropout_1',
@@ -161,7 +142,11 @@ class ConvLSTM(HyperModel):
                 step=0.05,
             ))
         )
+        # Flatten the output tensor from previous layer
         model.add(Flatten())
+
+        # define the number if units and the activation function
+        # so that it can be optimized in the hyperparameters tuning step
         model.add(
             Dense(
                 units=hp.Int(
@@ -206,6 +191,7 @@ class ConvLSTM(HyperModel):
         )
         return model
 
+# define the class for the CNNLSTM model
 class CNNLSTM(HyperModel):
     def __init__(self, input_shape,n_outputs):
         self.input_shape = input_shape
