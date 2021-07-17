@@ -1,3 +1,39 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import os
+from pandas import read_csv
+from pandas import DataFrame
+import numpy as np
+from numpy import mean
+from numpy import std
+from numpy import array
+from numpy import vstack
+from numpy import dstack
+from numpy import unique
+from scipy import stats
+from matplotlib import pyplot
+from tensorflow import keras
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.layers import Flatten
+from keras.layers import Dropout
+from keras.layers import LSTM
+from keras.layers import TimeDistributed
+from keras.layers import ConvLSTM2D
+from keras.layers.convolutional import Conv1D
+from keras.layers.convolutional import MaxPooling1D
+from tensorflow.keras.utils import to_categorical
+import keras_tuner
+from keras_tuner import HyperModel
+from keras.callbacks import EarlyStopping
+from sklearn.model_selection import KFold
+from sklearn.model_selection import train_test_split
+from sklearn import metrics
+from sklearn.metrics import classification_report
+from sklearn.metrics import plot_confusion_matrix
+import seaborn as sns
+
+
 # load the dataset, returns train and test X and y elements
 def transform_dataset(trainX, trainy, testX, testy):
 	print(trainX.shape, trainy.shape)

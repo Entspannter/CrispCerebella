@@ -1,5 +1,5 @@
 
-pip install -q -U keras-tuner
+#pip install -q -U keras-tuner
 
 import matplotlib.pyplot as plt
 import pandas as pd
