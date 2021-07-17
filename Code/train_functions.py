@@ -60,7 +60,7 @@ def HP_Search(hypermodel ,MaxTrial, Num_Epochs_Search, Train_X, Train_y, ID):
   # Define an early stop 
   es = EarlyStopping(monitor='val_accuracy',min_delta=0.01, mode='max', verbose = 2, patience = 5)
 
-  # Start the search og hyperparemeters
+  # Start the search of hyperparemeters
   tuner.search(Train_X, Train_y, epochs = Num_Epochs_Search, validation_split = 0.2,callbacks=[es])
 
   # Get the tuned hyperparemters 
