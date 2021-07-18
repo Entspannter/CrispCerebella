@@ -7,9 +7,8 @@
 
 **Table of Contents**
 
-[TOCM]
-
-[TOC]
+[Headers](# Overview)
+[Headers](# Repository Files)
 
 # Overview [Headers](#headers)
 This repository provides the codes and data used for our Deep Learning Project - "Human Activity Recognition from Sensor Data".
