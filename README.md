@@ -44,12 +44,12 @@ HAR Dataset from UCI dataset was used. This dataset was collected from 30 subjec
 
 # Requirements
 <ul>
-<li><a href="http://scikit-learn.org/stable/" rel="nofollow">Scikit-learn</a></li>
+<a href="http://scikit-learn.org/stable/" rel="nofollow">Scikit-learn</a></li>
 <li><a href="https://github.com/fchollet/keras">Keras</a> (Recommended version 2.4.0)</li>
 <li><a href="https://www.tensorflow.org/" rel="nofollow">Tensorflow</a> (Recommended version 2.5.0)</li>
 <li><a href="https://www.python.org/" rel="nofollow">Python 3.8</a></li>
+<li>Other Libraries used: Numpy, Matplotlib, Seaborn, sklearn.metrics, Scipy, OS, and Pandas</li>
 </ul>
-Other Libraries used: Numpy, Matplotlib, Seaborn, sklearn.metrics, Scipy, OS, and Pandas
 
 # Links
 [Link to Dataset](https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
