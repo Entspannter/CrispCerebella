@@ -9,7 +9,8 @@
 
 [Overview](#Overview)
 [Repository Files](#Repository Files)
-
+<a name="Overview"/>
+<a name="Repository Files"/>
 
 # Overview
 This repository provides the codes and data used for our Deep Learning Project - "Human Activity Recognition from Sensor Data".
