@@ -8,9 +8,9 @@
 **Table of Contents**
 
 [Overview](#Overview)
-[Repository Files](# Repository Files)
+[Files](#Files)
 [Dataset](#Dataset)
-
+[Requirements](#Requirements)
 # Overview
 This repository provides the codes and data used for our Deep Learning Project - "Human Activity Recognition from Sensor Data".
 The goal of our project is to build a model which is able to classify and predict human activities performed by users based on accelerometer and gyroscope sensor data, which were collected by a smartphone located on the user's waist. 
@@ -25,7 +25,7 @@ The activities to be classified are:
 
 To achieve our goal we implemented and evaluated several machine learning (ML) approaches. We built four different ML: Stacked LSTM with two layers, ConvLSTM, CNN LSTM, and Transfer Learning. In addition, we used hyperparameter tuning and K-fold Cross Validation to optimize the performance of the models, and eventually choose the best model with the best accuracy.
 
-# Repository Files
+# RepositoryFiles
 Our repository is divided into x files as follows:
 1.  Dataset File - Contains the dataset files, which were used
 2. Code - Contains the scripts used in our project 
