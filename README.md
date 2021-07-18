@@ -49,8 +49,7 @@ HAR Dataset from UCI dataset was used. This dataset was collected from 30 subjec
 <li><a href="https://www.tensorflow.org/" rel="nofollow">Tensorflow</a> (Recommended version 2.5.0)</li>
 <li><a href="https://www.python.org/" rel="nofollow">Python 3.8</a></li>
 </ul>
-##Other Libraries Used
-Numpy, Matplotlib, Seaborn, sklearn.metrics, Scipy, OS, and Pandas
+Other Libraries used: Numpy, Matplotlib, Seaborn, sklearn.metrics, Scipy, OS, and Pandas
 
 # Links
 [Link to Dataset](https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
