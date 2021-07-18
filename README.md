@@ -8,9 +8,8 @@
 **Table of Contents**
 
 [Overview](#Overview)
-[Repository Files](#Repository Files)
-<a name="Overview"/>
-<a name="Repository Files"/>
+[Repository Files](# Repository Files)
+[Dataset](#Dataset)
 
 # Overview
 This repository provides the codes and data used for our Deep Learning Project - "Human Activity Recognition from Sensor Data".
