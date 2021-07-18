@@ -7,10 +7,10 @@
 
 **Table of Contents**
 
-[Headers](# Overview)
-[Headers](# Repository Files)
+[Overview](#Overview)
+[Repository Files](#Repository Files)
 
-# Overview [Headers](#headers)
+# Overview
 This repository provides the codes and data used for our Deep Learning Project - "Human Activity Recognition from Sensor Data".
 The goal of our project is to build a model which is able to classify and predict human activities performed by users based on accelerometer and gyroscope sensor data, which were collected by a smartphone located on the user's waist. 
 
