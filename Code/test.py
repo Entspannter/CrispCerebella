@@ -32,3 +32,29 @@ from sklearn import metrics
 from sklearn.metrics import classification_report
 from sklearn.metrics import plot_confusion_matrix
 import seaborn as sns
+
+from data_loading import *
+from test_functions import *
+
+testX, testy = datasetloader('test', '../Dataset/UCI HAR Dataset/')
+print("Shape of test Data:", testX.shape, testy.shape)
+
+y_labels = load_labels()
+
+# Heatmap for the LSTM model
+BestLSTMModel = keras.models.load_model("../Models/Final_Model_LSTM0.8744485974311829")
+
+HeatMap_ConfMatrix(BestLSTMModel, testX, testy, y_labels)
+
+# Heatmap for the LSTM model
+BestConvLSTMModel = keras.models.load_model("../Models/")
+
+HeatMap_ConfMatrix(BestConvLSTMModel, testX, testy, y_labels)
+
+# Heatmap for the LSTM model
+BestCNNLSTMModel = keras.models.load_model("../Models/")
+
+HeatMap_ConfMatrix(BestCNNLSTMModel, testX, testy, y_labels)
+
+
+
