@@ -2,6 +2,7 @@
 from train_functions import *
 from data_loading import *
 from architecture import *
+import numpy as np
 
 # load all train
 trainX, trainy = datasetloader('train', '../Dataset/UCI HAR Dataset/')
