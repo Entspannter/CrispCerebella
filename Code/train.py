@@ -34,7 +34,7 @@ X_LSTM = np.concatenate((trainX, testX), axis=0)
 y_LSTM = np.concatenate((trainy, testy), axis=0)
 
 # Hyperparameters tuning inside of k-fold CV
-Best_HP_LSTM, Best_Epoch_LSTM = K_Fold_CV(X_LSTM,
+Best_HP_LSTM, Best_Epoch_LSTM = k_fold_cv(X_LSTM,
                                           y_LSTM,
                                           LSTMStacked,
                                           Model_Name_LSTM,

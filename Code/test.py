@@ -42,7 +42,7 @@ print("Shape of test Data:", testX.shape, testy.shape)
 y_labels = load_labels()
 
 # Heatmap for the LSTM model
-BestLSTMModel = keras.models.load_model("../Models/")
+BestLSTMModel = keras.models.load_model("../Models/Final_Model_LSTM0.8744485974311829")
 
 HeatMap_ConfMatrix(BestLSTMModel, testX, testy, y_labels)
 
