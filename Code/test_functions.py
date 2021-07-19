@@ -1,5 +1,4 @@
 import pandas as pd
-import sns as sns
 import numpy as np
 from sklearn.metrics import classification_report
 from numpy import unique
