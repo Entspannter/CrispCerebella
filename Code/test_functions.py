@@ -16,15 +16,19 @@ def create_heatmap(best_model, x_test, y_test, y_labels):
 
     # increment the output by 1 to match the y_test file
     prediction = prediction + 1
+    print(prediction)
 
     # convert the y_test from categorical to numerical
     y_true = np.argmax(y_test, axis=-1)
 
     y_true = y_true + 1
+    print(y_true)
 
     # extract the unique labels and targets names of activities for the heatmap
     labels = unique(y_true)
+    print(labels)
     target_names = unique(y_labels)
+    print(target_names)
 
     # create text report showing the main classification metrics
     clf_report = classification_report(y_true,
