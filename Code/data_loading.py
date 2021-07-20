@@ -40,8 +40,8 @@ def datasetloader(train_test_var, directory=''):
 	y = dataloader(directory + train_test_var + '/y_'+train_test_var+'.txt')
 	return X, y
 
-def load_labels():
+def load_labels(directory = '../Dataset/UCI HAR Dataset/test/y_test.txt'):
 	# load labels
-	y_test = pd.read_csv('../Dataset/UCI HAR Dataset/test/y_test.txt', names=['Activity'], squeeze=True)
+	y_test = pd.read_csv(directory, names=['Activity'], squeeze=True)
 	y_labels = y_test.map({1: 'WALKING', 2:'WALKING_UPSTAIRS',3:'WALKING_DOWNSTAIRS', 4:'SITTING', 5:'STANDING',6:'LAYING'})
 	return y_labels
