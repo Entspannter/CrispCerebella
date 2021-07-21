@@ -1,34 +1,8 @@
-import os 
-import numpy as np
-import tensorflow as tf
-import random as python_random
-seed = 42
-
-# The below is necessary for starting Numpy generated random numbers
-# in a well-defined initial state.
-np.random.seed(seed)
-
-# The below is necessary for starting core Python generated random numbers
-# in a well-defined state.
-python_random.seed(seed)
-
-# The below set_seed() will make random number generation
-# in the TensorFlow backend have a well-defined initial state.
-tf.random.set_seed(seed)
-
-os.environ['PYTHONHASHSEED']=str(seed)
-
-from keras import backend as K
-session_conf = tf.compat.v1.ConfigProto(intra_op_parallelism_threads=1, inter_op_parallelism_threads=1)
-sess = tf.compat.v1.Session(graph=tf.compat.v1.get_default_graph(), config=session_conf)
-tf.compat.v1.keras.backend.set_session(sess)
-
 import matplotlib.pyplot as plt
 from tensorflow.keras.utils import to_categorical
 import keras_tuner
 from keras.callbacks import EarlyStopping
 from sklearn.model_selection import KFold
-
 
 
 # load the dataset, returns train and test X and y elements
