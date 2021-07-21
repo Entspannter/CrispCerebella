@@ -1,3 +1,20 @@
+import numpy as np
+import tensorflow as tf
+import random as python_random
+
+my_seed = 42
+# The below is necessary for starting Numpy generated random numbers
+# in a well-defined initial state.
+np.random.seed(my_seed)
+
+# The below is necessary for starting core Python generated random numbers
+# in a well-defined state.
+python_random.seed(my_seed)
+
+# The below set_seed() will make random number generation
+# in the TensorFlow backend have a well-defined initial state.
+tf.random.set_seed(my_seed)
+
 import matplotlib.pyplot as plt
 from tensorflow.keras.utils import to_categorical
 import keras_tuner
