@@ -29,4 +29,4 @@ def create_heatmap(best_model, x_test, y_test, y_labels):
     print(clf_report)
 
     # plot the report as a heatmap
-    heatmap(pd.DataFrame(clf_report).iloc[:-1, :].T, annot=True, cmap="Blues")
+    sns.heatmap(pd.DataFrame(clf_report).iloc[:-1, :].T, annot=True, cmap="Blues")
