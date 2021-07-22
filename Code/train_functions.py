@@ -98,6 +98,7 @@ def k_fold_cv(x, y, model_class, model_name, input_shape, num_outputs, max_trial
         # re-instantiate the hypermodel and train it with the optimal number of epochs from above
         hypermodel = model_class(input_shape, num_outputs)
         new_best_model = hypermodel.build(best_hp)
+        new_best_model.fit(X_train, y_train, epochs=best_epoch, validation_split=0.2)
 
         # evaluate the model 
         eval_result = new_best_model.evaluate(X_test, y_test)
