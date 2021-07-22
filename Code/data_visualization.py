@@ -4,7 +4,6 @@ from numpy import unique
 import matplotlib.pyplot as plt
 import seaborn as sns
 from numpy import vstack
-from data_loading import *
 from IPython.display import display
 
 
@@ -175,7 +174,6 @@ def plot_subject(subX, suby):
     plt.subplot(n, 1, n)
     plt.plot(suby, color='#0000e6')
     plt.title('Activity', y=0, loc='left')
-
 
 # load data
 plt.show()
