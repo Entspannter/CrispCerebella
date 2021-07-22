@@ -4,7 +4,7 @@ from numpy import unique
 import matplotlib.pyplot as plt
 import seaborn as sns
 from numpy import vstack
-from data_loading import *
+from CrispCerebella.Code.data_loading import *
 from IPython.display import display
 
 
