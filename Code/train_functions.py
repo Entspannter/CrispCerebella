@@ -8,16 +8,15 @@ import os
 import numpy as np
 import random
 
-SEED = 42
 
-def set_seeds(seed=SEED):
+def set_seeds(seed):
     os.environ['PYTHONHASHSEED'] = str(seed)
     random.seed(seed)
     tf.random.set_seed(seed)
     np.random.seed(seed)
 
 
-def set_global_determinism(seed=SEED):
+def set_global_determinism(seed):
     set_seeds(seed=seed)
 
     os.environ['TF_DETERMINISTIC_OPS'] = '1'
@@ -26,9 +25,6 @@ def set_global_determinism(seed=SEED):
     tf.config.threading.set_inter_op_parallelism_threads(1)
     tf.config.threading.set_intra_op_parallelism_threads(1)
 
-
-# Call the above function with seed value
-set_global_determinism(seed=SEED)
 
 # load the dataset, returns train and test X and y elements
 def transform_dataset(x_train, y_train, x_test, y_test):
@@ -82,7 +78,7 @@ def k_fold_cv(x, y, model_class, model_name, input_shape, num_outputs, max_trial
         X_train, X_test = x[train_index, :], x[test_index, :]
         y_train, y_test = y[train_index], y[test_index]
 
-        # create an new instance of the chosen hypermodel class
+        # instantiate the hypermodel from the chosen model class (StackedLSTM/CNNLSTM/ConvLSTM)
         hypermodel = model_class(input_shape, num_outputs)
 
         # start search for the best hyperparemeters and the corresponding model
@@ -99,8 +95,13 @@ def k_fold_cv(x, y, model_class, model_name, input_shape, num_outputs, max_trial
         best_epoch = val_acc_per_epoch.index(max(val_acc_per_epoch)) + 1
         print('Best epoch: %d' % (best_epoch,))
 
+        # re-instantiate the hypermodel and train it with the optimal number of epochs from above
+        hypermodel_new = model_class(input_shape, num_outputs)
+        new_best_model = hypermodel_new.build(best_hp)
+        new_best_model.fit(X_train, y_train, epochs=best_epoch, validation_split=0.2)
+
         # evaluate the model 
-        eval_result = best_model.evaluate(X_test, y_test)
+        eval_result = new_best_model.evaluate(X_test, y_test)
 
         # extract the accuracy of the model 
         test_acc = eval_result[1]
