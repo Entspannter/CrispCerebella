@@ -31,7 +31,6 @@ class LSTMStacked(HyperModel):
                             default=128
                         ),
                        input_shape=self.input_shape,
-                       activity_regularizer=keras.regularizers.l2(0.01),
                        return_sequences = True
                     )
                 )
@@ -55,8 +54,7 @@ class LSTMStacked(HyperModel):
                             max_value=512,
                             step=32,
                             default=128
-                        ),
-            activity_regularizer = keras.regularizers.l2(0.01)
+                        )
                     )
         )
 
@@ -86,8 +84,7 @@ class LSTMStacked(HyperModel):
                     'dense_activation',
                     values=['relu', 'tanh', 'sigmoid'],
                     default='relu'
-                ),
-                activity_regularizer=keras.regularizers.l2(0.01)
+                )
             )
         )
 
