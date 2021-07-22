@@ -8,7 +8,6 @@ import os
 import numpy as np
 import random
 
-SEED = 42
 
 def set_seeds(seed=SEED):
     os.environ['PYTHONHASHSEED'] = str(seed)
@@ -26,9 +25,6 @@ def set_global_determinism(seed=SEED):
     tf.config.threading.set_inter_op_parallelism_threads(1)
     tf.config.threading.set_intra_op_parallelism_threads(1)
 
-
-# Call the above function with seed value
-set_global_determinism(seed=SEED)
 
 # load the dataset, returns train and test X and y elements
 def transform_dataset(x_train, y_train, x_test, y_test):
