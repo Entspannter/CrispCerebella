@@ -19,6 +19,8 @@
 
 [References](#References)
 
+[Used Materials](#Used Materials)
+
 # Overview
 This repository provides the codes and data used for our Deep Learning Project - "Human Activity Recognition from Sensor Data".
 The goal of our project is to build a model which is able to classify and predict human activities performed by users based on accelerometer and gyroscope sensor data, which were collected by a smartphone located on the user's waist. 
@@ -55,6 +57,22 @@ HAR Dataset from UCI dataset was used. This dataset was collected from 30 subjec
 
 # Links
 [Link to Dataset](https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
+
+# Used Materials
+
+The following sourses were used as a resource of information for creating the models and optimizating them:
+
+1. Brownlee, Jason. n.d. “LSTMs for Human Activity Recognition Time Series Classification.” Accessed July 23, 2021. https://machinelearningmastery.com/how-to-develop-rnn-models-for-human-activity-recognition-time-series-classification/.
+2. Brownlee, Jason. 2018. “1D Convolutional Neural Network Models for Human Activity Recognition.” September 21, 2018. https://machinelearningmastery.com/cnn-models-for-human-activity-recognition-time-series-classification/.
+3. Prost, Julie. 2020. “How to Perform Hyperparameter Tuning with Keras Tuner | Sicara.” November 26, 2020. https://www.sicara.ai/blog/hyperparameter-tuning-keras-tuner.
+4. “Einführung in Den Keras Tuner  |  TensorFlow Core.” n.d. Accessed July 23, 2021. https://www.tensorflow.org/tutorials/keras/keras_tuner.
+5. “Modelle Speichern Und Laden  |  TensorFlow Core.” n.d. Accessed July 23, 2021. https://www.tensorflow.org/tutorials/keras/save_and_load.
+6. Nils. 2018. “Human Activity Recognition (HAR) Tutorial with Keras and Core ML (Part 1) | by Nils | Towards Data Science.” August 9, 2018. https://towardsdatascience.com/human-activity-recognition-har-tutorial-with-keras-and-core-ml-part-1-8c05e365dfa0.
+7. Benner, Jonas. 2020. “Cross-Validation and Hyperparameter Tuning: How to Optimise Your Machine Learning Model | by Jonas Benner | Aug, 2020 | Medium | Towards Data Science.” August 6, 2020. https://towardsdatascience.com/cross-validation-and-hyperparameter-tuning-how-to-optimise-your-machine-learning-model-13f005af9d7d.
+
+
+
+
 
 # References 
 [1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013. 
