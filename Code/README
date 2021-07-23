@@ -1,0 +1,26 @@
+This folder contains all of the code files required for this project, those include:
+
+# Data_Visualization.ipynb - a google colab file used to visualize the dataset.
+
+# architecture.py - a python file with the three classes of the three LSTM models.
+
+# data_loading.py - a python file containing all functions necessary for data loading.
+
+# data_visualization.py - a python file containing all functions necessary for data visualization.
+
+# test.ipynb - a google colab file for reload the saved models and generating a  heat map for the 
+classification report and the confusion matrix.
+
+# test_functions.py - a phyton file containing all functions necessary to generate the heatmap of 
+the classification report and confusion matrix.
+
+# train_CNNLSTM.ipynb - a google colab file containing all steps to train and optimize the CNNLSTM model.
+
+# train_ConvLSTM.ipynb - a google colab file containing all steps to train and optimize the ConvLSTM model.
+
+# train_LSTM.ipynb - a google colab file containing all steps to train and optimize the stacked LSTM model.
+
+# train_functions.py - a python file containing all functions necessary for training and optimizing a model.
+
+# transfer_learning.ipynb -  a google colab file containing all steps to initialize and train the CNNLSTM model.
+
