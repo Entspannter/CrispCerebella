@@ -4,7 +4,6 @@ import seaborn as sns
 from sklearn.metrics import classification_report
 from numpy import unique
 from sklearn.metrics import confusion_matrix
-import sklearn.metrics as metrics
 
 def create_heatmap(best_model, x_test, y_test, y_labels):
     # function to create a confusion matrix and a heatmap
@@ -32,6 +31,6 @@ def create_heatmap(best_model, x_test, y_test, y_labels):
     # plot the report as a heatmap
     sns.heatmap(pd.DataFrame(clf_report).iloc[:-1, :].T, annot=True, cmap="Blues")
     
-    matrix = metrics.confusion_matrix(y_test.argmax(axis=1), y_pred.argmax(axis=1))
+    matrix = confusion_matrix(y_test.argmax(axis=1), prediction.argmax(axis=1))
     
     print(matrix)
