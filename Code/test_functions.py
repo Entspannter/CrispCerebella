@@ -32,11 +32,13 @@ def create_heatmap(best_model, x_test, y_test, y_labels):
     
     return prediction, target_names
     
-def Con_Matrix(y_test, prediction, labels):
+def Con_Matrix(y_test, prediction, target_names):
+    labels = unique(y_test)
     # create a confusion matrix 
     ConfMatr = confusion_matrix(y_test,
                               prediction,
                               labels,
                               normalize = 'true')
+    
     
     sns.heatmap(pd.DataFrame(ConfMatr).T, annot=True, cmap="Blues",xticklabels=target_names, yticklabels=target_names)
