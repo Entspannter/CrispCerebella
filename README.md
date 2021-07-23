@@ -44,6 +44,7 @@ Our repository is divided into 4 folders as follows:
 4. WISDM - data set for Transfer Learning
 
 Adittional files:
+
 **Colab demo** - a goolge colab demonstrating the most important analysis steps and results.  
 
 # Dataset
