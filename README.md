@@ -42,7 +42,9 @@ Our repository is divided into 4 folders as follows:
 2. Dataset - Contains the UCI dataset files
 3. Models - Contains our trained ML models
 4. WISDM - data set for Transfer Learning
-5. Adittional file - Colab demo, showing the main results of our code
+
+Adittional files:
+**Colab demo** - a goolge colab demonstrating the most important analysis steps and results.  
 
 # Dataset
 HAR Dataset from UCI dataset was used. This dataset was collected from 30 subjects (between the ages 19-48 years old) performing different activities with a smartphone (Samsung Galaxy S II) attached to their waist. The accelerometer and Gyroscope were already embedded to the smartphone. The data obtained was preprocessed and labeled. The time signals were preprocessed using a noise filter and later sampled in sliding windows of 2.56 seconds and 50\% overlap (128 readings/window). In addition, the accelerometer data was divided into gravitational and body motion sets with a Butterworth low-pass filter into body acceleration and gravity. For the gravitational force, a filter with a 0.3 Hz cut-off frequency was used. Finally, a 561 vector was available for each window by calculating variables of time and frequency. Finally, the dataset was divided into two sets (70% - Training data, 30% - Test data) [1]. 
