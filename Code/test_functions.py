@@ -3,6 +3,7 @@ import numpy as np
 import seaborn as sns
 from sklearn.metrics import classification_report
 from numpy import unique
+from sklearn.metrics import confusion_matrix
 
 def create_heatmap(best_model, x_test, y_test, y_labels):
     # function to create a confusion matrix and a heatmap
