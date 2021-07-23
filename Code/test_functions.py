@@ -31,4 +31,4 @@ def create_heatmap(best_model, x_test, y_test, y_labels):
     sns.heatmap(pd.DataFrame(clf_report).iloc[:-1, :].T, annot=True, cmap="Blues")
     
     print('Confusion Matrix')
-    print(confusion_matrix(validation_generator.classes, y_pred))
+    print(confusion_matrix(y_labels, y_pred))
