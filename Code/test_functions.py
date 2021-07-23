@@ -29,3 +29,7 @@ def create_heatmap(best_model, x_test, y_test, y_labels):
 
     # plot the report as a heatmap
     sns.heatmap(pd.DataFrame(clf_report).iloc[:-1, :].T, annot=True, cmap="Blues")
+    
+    matrix = metrics.confusion_matrix(y_test.argmax(axis=1), y_pred.argmax(axis=1))
+    
+    print(matrix)
