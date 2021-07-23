@@ -10,7 +10,7 @@ from IPython.display import display
 
 # In this section we will assign the classes (which correspond the motions 1-6)
 # to each row of the 128 data points.
-def rows_by_class(our_data, print_flag == True):
+def rows_by_class(our_data, print_flag = True):
     # convert the numpy array into a dataframe
     df_data = pd.DataFrame(our_data, columns=["Class"])
     # grouping the rows by class value and count the amount of rows
