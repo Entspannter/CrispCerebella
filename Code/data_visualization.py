@@ -22,7 +22,7 @@ def rows_by_class(our_data, print_flag = True):
     for i in range(len(data_grouped_size)):
         class_percent = data_grouped_size[i] / len(df_data) * 100
         if (print_flag == True):
-        print(f'Class={i + 1}', f'total={data_grouped_size[i]}', f'percentage={class_percent}', sep="\t \t \t")
+            print(f'Class={i + 1}', f'total={data_grouped_size[i]}', f'percentage={class_percent}', sep="\t \t \t")
     return df_grouped
 
 
