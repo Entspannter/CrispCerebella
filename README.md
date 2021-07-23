@@ -17,7 +17,7 @@
 
 [Links](#Links)
 
-[Used Materials](#UsedMaterials)
+[Used Materials](#Used_Materials)
 
 [References](#References)
 
@@ -59,7 +59,7 @@ HAR Dataset from UCI dataset was used. This dataset was collected from 30 subjec
 # Links
 [Link to Dataset](https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
-# Used Materials
+# Used_Materials
 
 The following sourses were used as a resource of information for creating the models and optimizating them:
 
